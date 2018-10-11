@@ -1,0 +1,39 @@
+<h1>Grocery List</h1>
+
+
+<table>
+  <% @groceries.each do |item| %>
+    <tr>
+      <ul>
+          <td id="grocery-list">
+              <li class="item">
+                <a href="/groceries/<%=item["id"]%>"><%= item["name"] %></a>
+          </td>
+          <td>
+                <a class='pull-right' id="update" href="/groceries/<%=item["id"]%>/edit"> Update Item </a><br>
+          </td>
+          <td>
+                <a class='pull-right' id="update" href="/groceries/<%=item["id"]%>/add-comment"> Add Commentaires </a><br>
+          </td>
+          <td>
+                <form action="/groceries/<%=item["id"]%>" method="post" class='pull-right' >
+                  <input type='hidden' name='_method' value='DELETE'/>
+                  <button type='submit' class='separate' value='<%item["id"]%>' id='delete-button'>Delete Item</button>
+                </form>
+              </li>
+          </td>
+      </ul>
+    </tr>
+  <% end %>
+</table>
+
+<fieldset>
+  <legend>Add Item</legend>
+  <form  class="keep-center" method="post" action="/groceries">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+    <label for='body'>Comment</label>
+    <input type="text" name="body" id="comment" />
+    <input class='separate' type="submit" value="Submit" />
+  </form>
+</fieldset>

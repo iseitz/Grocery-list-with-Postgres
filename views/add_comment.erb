@@ -1,0 +1,10 @@
+<fieldset>
+  <form method="post" action="/groceries/<%=params["id"]%>/add-comment">
+    <input type="hidden" name="_method" value="PATCH">
+    <label for="comment">Comment</label>
+    <input type="text" value="" name="comment" id="comment" />
+    <input type="submit" value="Submit" />
+  </form>
+</fieldset>
+
+<a href="/groceries">Back to homepage</a>

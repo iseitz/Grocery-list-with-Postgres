@@ -1,0 +1,46 @@
+<h1>Grocery List</h1>
+
+
+  <ul id="grocery-list">
+    <% @groceries.each do |item| %>
+      <li class="item">
+          <a href="/groceries/<%=item["id"]%>"><%= item["name"] %></a>
+          <% if item["name"] == @all_comments["name"] %>
+            <p><%= "Item #{item["name"]} has commentaires, please see below " %>
+              <ul>
+                <% n = @all_comments.length %>
+                <% @all_comments.each do |k,v| %>
+
+                    <% if @all_comments["comment1"].nil? %>
+                        <%= "Opps! No commentaires!" %>
+                        < % break %>
+                    <% elsif n > 1 && n < 10 %>
+                        <li class= 'item-commentaires'>
+                          <%= @all_comments["comment#{n - 1}"]%>
+                        </li>
+                        <% n -= 1 %>
+                    <% end %>
+                <% end %>
+
+                <% if @all_comments["message"] %>
+                  <%= @all_comments["message"] %>
+                <% end %>
+
+              </ul>
+            </p>
+          <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+<fieldset>
+  <legend>Add Item</legend>
+  <form method="post" action="/groceries">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+    <label for="body">Comment</label>
+    <input type="text" name="body" id="comment" />
+    <input type="submit" value="Submit" />
+  </form>
+</fieldset>
+<a href="/groceries">Back to homepage</a>

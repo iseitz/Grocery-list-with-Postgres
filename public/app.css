@@ -1,0 +1,83 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #A11F88;
+  text-align: left;
+  background-color: #FFCEA7;
+}
+
+h1, legend {
+  text-align: center;
+}
+
+legend {
+  padding: 10px, 20px;
+  margin: 5px;
+}
+
+h1 {
+  text-decoration: underline;
+  color: #A11F88;
+}
+
+fieldset {
+  text-align: center;
+  color: #A11F88;
+}
+
+li {
+  list-style: none;
+  background: white;
+  margin: 2px;
+  padding: 5px;
+}
+
+table {
+  width: 80%;
+  margin-left: 4rem;
+}
+
+td {
+  height: 50px;
+  width: 25%;
+  padding: 5px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.row {
+  margin: 20px 5%;
+}
+
+.pull-right {
+  float: right;
+  padding-left: 20px;
+ }
+
+.keep-center {
+   display: block;
+   margin: 5px;
+ }
+
+.separate {
+   background-color: white;
+   border: 1px solid #157DA6;
+   border-radius: 5px;
+   cursor: pointer;
+   color: black;
+   font-size: 12px;
+   font-weight: normal;
+   text-decoration: none;
+   padding: 5px;
+ }
+
+.item, .item-commentaires {
+  background-color: #FFCEA7;
+}
+
+#name, #comment {
+  background-color: #FFE3A5;
+}
+
+#delete-button {
+  background-color: #FFE3A5;
+}

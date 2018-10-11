@@ -1,0 +1,10 @@
+<fieldset>
+  <form method="post" action="/groceries/<%=params["id"]%>/edit">
+    <input type="hidden" name="_method" value="PATCH">
+    <label for="name">Name</label>
+    <input  id="item_name" type="text" value="<%=@name %>" name="name" id="name" />
+    <input type="submit" value="Submit" />
+  </form>
+</fieldset>
+
+<a href="/groceries">Back to homepage</a>
