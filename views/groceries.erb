@@ -1,6 +1,5 @@
 <h1>Grocery List</h1>
 
-
 <table>
   <% @groceries.each do |item| %>
     <tr>
@@ -10,15 +9,15 @@
                 <a href="/groceries/<%=item["id"]%>"><%= item["name"] %></a>
           </td>
           <td>
-                <a class='pull-right' id="update" href="/groceries/<%=item["id"]%>/edit"> Update Item </a><br>
+                <a class='pull-right' id="update" href="/groceries/<%= item["id"] %>/edit"> Update Item </a><br>
           </td>
           <td>
-                <a class='pull-right' id="update" href="/groceries/<%=item["id"]%>/add-comment"> Add Commentaires </a><br>
+                <a class='pull-right' id="update" href="/groceries/<%= item["id"] %>/add-comment"> Add Commentaires </a><br>
           </td>
           <td>
-                <form action="/groceries/<%=item["id"]%>" method="post" class='pull-right' >
+                <form action="/groceries/<%= item["id"] %>" method="post" class='pull-right' >
                   <input type='hidden' name='_method' value='DELETE'/>
-                  <button type='submit' class='separate' value='<%item["id"]%>' id='delete-button'>Delete Item</button>
+                  <button type='submit' class='separate' value='<% item["id"] %>' id='delete-button'>Delete Item</button>
                 </form>
               </li>
           </td>
